@@ -1,0 +1,28 @@
+# Ignore compiled object files
+*.o
+
+# Ignore executable files
+*.exe
+*.out
+*.obj
+
+# Ignore temporary or backup files
+*~
+*.bak
+*.tmp
+
+# Ignore dependency or build folders (if any)
+build/
+dist/
+bin/
+debug/
+release/
+
+# Ignore editor/IDE specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Keep the Makefile tracked
+# (Do NOT ignore Makefile)
