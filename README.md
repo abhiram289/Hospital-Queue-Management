@@ -34,7 +34,7 @@ It allows users to register patients, manage their priority, and display the cur
 
 4. Run:
    ```bash
-   ./hospital.exe
+   ./hospital
    ```
    
 

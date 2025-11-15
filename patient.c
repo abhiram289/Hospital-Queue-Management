@@ -3,7 +3,7 @@
 #include <string.h>
 #include "patient.h"
 
-static Patient* head = NULL; // queue head (local to this file only)
+Patient* head = NULL;   // queue head
 
 // Add new patient based on priority
 void addPatient(int id, char name[], int priority) {
@@ -25,44 +25,53 @@ void addPatient(int id, char name[], int priority) {
         Patient* temp = head;
         while (temp->next && temp->next->priority <= priority)
             temp = temp->next;
+
         newPatient->next = temp->next;
         temp->next = newPatient;
     }
-    printf("✅ Patient added successfully!\n");
+
+    printf("Patient added successfully!\n");
 }
 
-// Remove the next patient
+// Remove next patient
 void treatPatient() {
     if (!head) {
         printf("No patients in queue!\n");
         return;
     }
+
     Patient* temp = head;
     head = head->next;
-    printf("🩺 Treating patient: %s (ID: %d, Priority: %d)\n",
+
+    printf(" Treating patient: %s (ID: %d, Priority: %d)\n",
            temp->name, temp->id, temp->priority);
+
     free(temp);
 }
 
-// Display all patients in queue
+// Display 
 void displayQueue() {
     if (!head) {
         printf("No patients waiting.\n");
         return;
     }
+
     printf("\n--- Current Queue ---\n");
+
     Patient* temp = head;
     while (temp) {
         printf("ID: %d | Name: %s | Priority: %d\n",
                temp->id, temp->name, temp->priority);
         temp = temp->next;
     }
+
     printf("---------------------\n");
 }
 
 // Search by ID
 Patient* searchByID(int id) {
     Patient* temp = head;
+
     while (temp) {
         if (temp->id == id)
             return temp;
@@ -74,10 +83,13 @@ Patient* searchByID(int id) {
 // Search by Name
 Patient* searchByName(char name[]) {
     Patient* temp = head;
+
     while (temp) {
         if (strcmp(temp->name, name) == 0)
             return temp;
+
         temp = temp->next;
     }
+
     return NULL;
 }
