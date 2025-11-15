@@ -9,10 +9,8 @@ It allows users to register patients, manage their priority, and display the cur
 - Display the current queue in order of priority.
 - Simple and fast command-line interface.
 
-##  Technologies Used
-- C Programming Language
-- GCC Compiler
-- MinGW (for Windows)
+##  Languages Used
+- C 
 
 ##  How to Build and Run
 1. Clone the repository:
@@ -34,7 +32,7 @@ It allows users to register patients, manage their priority, and display the cur
 
 4. Run:
    ```bash
-   ./hospital
+   hospital.exe
    ```
    
 
